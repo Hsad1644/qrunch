@@ -3,6 +3,14 @@ from tkinter import ttk
 import json
 import random
 
+def set_custom_styles():
+    style = ttk.Style()
+    
+    # Configure styles here
+    style.configure("TLabel", font=("Sans", 14))
+    style.configure("TButton", font=("Sans", 14))
+    style.configure("TRadiobutton", font=("Sans", 14))
+
 # Initialize variables
 current_question = None
 
@@ -40,6 +48,8 @@ def save_and_mark():
 # Create the main window
 root = tk.Tk()
 root.title("Question Editor")
+
+set_custom_styles() 
 
 # Load questions data from JSON file
 questions_data = load_questions()
