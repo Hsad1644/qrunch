@@ -1,5 +1,6 @@
 # qrunch
 tkinter for making flash cards out of your quizzes
+
 used for crunching from question banks
 
 ## Setup
@@ -8,7 +9,7 @@ Ensure to have Python 3.x installed with path variables enabled
 After cloning/downloading the repo, run `pip install -r requirements.txt`
 
 ## Usage
-Run compplayerv2.pyw by double clicking it
+Run `compplayerv2.pyw` by double clicking it
 Make option choices from the visible items
 Right answer is highlighted green, wrong in red
 
