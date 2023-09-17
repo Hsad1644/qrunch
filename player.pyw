@@ -43,10 +43,13 @@ def select_random_question():
     
     # Display answer options as radio buttons
     for i, option in enumerate(current_question['options']):
-        radio = ttk.Radiobutton(options_frame, text=option, variable=selected_answer, value=str(i + 1),
-                                command=lambda option=option: highlight_option(option))
-        radio.grid(row=i, column=0, sticky='w')
-    
+        if len(enumerate(current_question['options']) >= 1: 
+            radio = ttk.Radiobutton(options_frame, text=option, variable=selected_answer, value=str(i + 1),
+                                    command=lambda option=option: highlight_option(option))
+            radio.grid(row=i, column=0, sticky='w')
+        else:
+            select_random_question()
+        
     # if not answered_question:  # Only increment total_questions if the question hasn't been answered
     total_questions += 1
     
@@ -55,12 +58,13 @@ def select_random_question():
 
 # Function to highlight the selected and correct option
 def highlight_option(selected_option):
+    next_button.config(state=tk.NORMAL)
     global correct_answers, wrong_answers, answered_question
     correct_option = current_question.get('answer', '1')  # Get the correct answer (default to 1)
     
     for radio in options_frame.winfo_children():
         option_text = radio['text']
-        if option_text == selected_option and total_questions == correct_answers + wrong_answers + 1:
+        if option_text == selected_option and total_questions >= correct_answers + wrong_answers:
             if option_text == current_question['options'][int(correct_option) - 1]:
                 radio.configure(style='Correct.TLabel')  # Correct and selected option in green
                 correct_answers += 1
@@ -96,7 +100,7 @@ style.configure('TButton', foreground='black')  # Default style
 # Create widgets
 question_label = ttk.Label(root, text="", wraplength=400)
 options_frame = ttk.Frame(root)
-next_button = ttk.Button(root, text="Next Question", command=select_random_question)
+next_button = ttk.Button(root, text="Next Question", command=select_random_question, state=tk.DISABLED)
 
 # Create scoreboard labels
 total_label = ttk.Label(root, text="Total Questions: 0")
