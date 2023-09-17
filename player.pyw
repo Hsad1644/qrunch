@@ -64,7 +64,7 @@ def highlight_option(selected_option):
     
     for radio in options_frame.winfo_children():
         option_text = radio['text']
-        if option_text == selected_option and total_questions >= correct_answers + wrong_answers:
+        if option_text == selected_option and total_questions > correct_answers + wrong_answers:
             if option_text == current_question['options'][int(correct_option) - 1]:
                 radio.configure(style='Correct.TLabel')  # Correct and selected option in green
                 correct_answers += 1
