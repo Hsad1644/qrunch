@@ -14,9 +14,14 @@ Make option choices from the visible items
 
 Right answer is highlighted green, wrong in red
 
-## Meta
-Change output.json to needs (pending improvement);
-the `answer` field indicates the value of the right option (starting from 1 to whatever is the number of options for a question)
+Run `setter.pyw` by double clicking; Select an option and click save to save the option value to the bank file (`output.json`)
+You may also wish to manually make changes to the `output.json` file's `answer` field by changing it to a value desired (starting from 1)
 
 Suggest changes/features in [Issues](https://github.com/Hsad1644/qrunch/issues)
 
+## Meta
+Upcoming improvements —
+* File refactoring
+* Extended features
+* Better UI
+* Improved data pre-processing
