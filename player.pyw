@@ -43,7 +43,7 @@ def select_random_question():
     
     # Display answer options as radio buttons
     for i, option in enumerate(current_question['options']):
-        if len(enumerate(current_question['options']) >= 1: 
+        if len(current_question['options']) >= 1: 
             radio = ttk.Radiobutton(options_frame, text=option, variable=selected_answer, value=str(i + 1),
                                     command=lambda option=option: highlight_option(option))
             radio.grid(row=i, column=0, sticky='w')
